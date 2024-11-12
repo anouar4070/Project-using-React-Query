@@ -11,6 +11,8 @@ export default function NewEventsSection() {
   const { data, isPending, isError, error } = useQuery({
     queryKey: ["events"],
     queryFn: fetchEvents,
+    //staleTime: 0, // how much time react query waits before sending behind the scene request
+    //gcTime: 30000 // the cached data will only be kept around for 30sec 
   });
 
   let content;
